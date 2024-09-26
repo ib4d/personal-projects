@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map of Poland</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        .leaflet-popup-content-wrapper {
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([52.2296756, 21.0122287], 6);
+
+        // Add a simple tile layer with minimal details
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
+        }).addTo(map);
+
+        // Load CSV data
+        Papa.parse('data.csv', {
+            download: true,
+            header: true,
+            complete: function(results) {
+                results.data.forEach(function(row) {
+                    var marker = L.marker([row.Latitude, row.Longitude])
+                        .bindPopup(`<b>${row.City}</b><br>Populacja: ${row.Population}`)
+                        .addTo(map);
+
+                    marker.on('mouseover', function(e) {
+                        this.openPopup();
+                    });
+
+                    marker.on('mouseout', function(e) {
+                        this.closePopup();
+                    });
+
+                    marker.on('click', function(e) {
+                        window.location.href = row.URL;
+                    });
+                });
+            }
+        });
+
+        // Enable zooming
+        map.on('zoomend', function() {
+            var zoomLevel = map.getZoom();
+            console.log('Current Zoom Level:', zoomLevel);
+        });
+    </script>
+</body>
+</html>
