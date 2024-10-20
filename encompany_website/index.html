@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your New Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="C:\Users\Abad Bolanos\OneDrive - FB Invest Group s.c\Dokumenty\ABAD-WORKAFFORD\CODE\Website\encompany_website\logo_gold.jpg" alt="Your Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-translate="home">Home</a></li>
+                <li><a href="#services" data-translate="services">Services</a></li>
+                <li><a href="#about" data-translate="about">About</a></li>
+                <li><a href="#contact" data-translate="contact">Contact</a></li>
+            </ul>
+            <button id="language-switch">ES</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="carousel">
+            <div class="carousel-item active"><img src="krsl_soldador.png" alt="Image 1"></div>
+            <div class="carousel-item"><img src="krsl_estibadores.png" alt="Image 2"></div>
+            <div class="carousel-item"><img src="krsl_montacargas.png" alt="Image 3"></div>
+            <div class="carousel-item"><img src="krsl_albaniles.png" alt="Image 4"></div>
+        </div>
+        <div class="hero-content">
+            <h1 data-translate="welcome">Welcome to EN Company</h1>
+            <p data-translate="experience">We offer jobs, accommodation, and transportation for our workers.</p>
+            <a href="#services" class="btn" data-translate="learnMore">Learn More</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 data-translate="ourServices">Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3 data-translate="privateCharter">Welding Specialist</h3>
+                <p data-translate="privateCharterDesc">Forge your future with us!</p>
+            </div>
+            <div class="card">
+                <h3 data-translate="groupCharter">Cargo Handler</h3>
+                <p data-translate="groupCharterDesc">Move the world with your skills!</p>
+            </div>
+            <div class="card">
+                <h3 data-translate="aircraftOwnership">Forklift Operator</h3>
+                <p data-translate="aircraftOwnershipDesc">Lift your career to new heights!</p>
+            </div>
+            <div class="card">
+                <h3 data-translate="masonry">Masonry</h3>
+                <p data-translate="masonryDesc">Build a lasting legacy with us!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 data-translate="aboutUs">About Us</h2>
+        <p data-translate="aboutUsDesc">Connecting You to Opportunities: Jobs, Housing, and Commutes to Work!</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 data-translate="contactUs">Contact Us</h2>
+        <form action="#">
+            <label for="name" data-translate="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email" data-translate="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message" data-translate="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" data-translate="send">Send</button>
+        </form>
+        <div class="contact-info">
+            <p data-translate="phone">Phone: +48 792 545 064</p>
+            <p data-translate="phone">Phone: +48 793 482 641</p>
+            <p data-translate="emailContact">Email: biuro.encompany@gmail.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><img src="sm_facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="sm_instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com" target="_blank"><img src="sm_linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.youtube.com" target="_blank"><img src="sm_youtube.png" alt="YouTube"></a>
+        </div>
+        <p>© 2024 Your New Website. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
